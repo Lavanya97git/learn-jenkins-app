@@ -23,13 +23,20 @@ pipeline {
                 '''
             }
         }
-        /*stage('test') {
+        stage('test') {
+            agent {
+                docker {
+                    image 'node:18-alpine'
+                    reuseNode true
+                }
+            }
             steps {
                 sh '''
+                    find . -name "index.html
                     npm test
                     echo a
                 '''
             }
-        }*/
+        }
     }
 }
