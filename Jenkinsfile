@@ -18,8 +18,6 @@ pipeline {
                     npm ci
                     npm run build
                     ls -la
-                    npm test
-                    echo a
                 '''
             }
         }
@@ -37,6 +35,12 @@ pipeline {
                     echo a
                 '''
             }
+        }
+    }
+
+    post {
+        always {
+            junit 'test-results/junit.xml'
         }
     }
 }
