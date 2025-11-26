@@ -32,7 +32,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    find . -name "index.html
+                    find . -name "index.html"
                     npm test
                     echo a
                 '''
