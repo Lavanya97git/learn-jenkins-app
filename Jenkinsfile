@@ -18,16 +18,18 @@ pipeline {
                     npm ci
                     npm run build
                     ls -la
+                    npm test
+                    echo a
                 '''
             }
         }
-        stage('test') {
+        /*stage('test') {
             steps {
                 sh '''
                     npm test
                     echo a
                 '''
             }
-        }
+        }*/
     }
 }
